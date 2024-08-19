@@ -43,3 +43,7 @@ export async function connectToDB() {
     }
 }
 
+export async function findAll() {
+    const positions = await PositionInfoDB.findAll();
+    return positions;
+}
