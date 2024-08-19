@@ -1,0 +1,24 @@
+{
+  "name": "uniswap-position",
+  "version": "1.0.0",
+  "description": "get uniswap position info",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index.ts"
+  },
+  "keywords": [
+    "uniswap",
+    "ethereum"
+  ],
+  "author": "tnm0113",
+  "license": "ISC",
+  "dependencies": {
+    "@uniswap/sdk-core": "^5.3.1",
+    "@uniswap/v3-sdk": "^3.13.1",
+    "ethers": "^6.13.2",
+    "jsbi": "^4.3.0",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  }
+}
