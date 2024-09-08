@@ -16,7 +16,7 @@ function startHttpSever() {
         ? parseInt(process.env.PORT, 10)
         : 8080;
 
-    app.listen(PORT, "localhost", function () {
+    app.listen(PORT, function () {
         console.log(`Server is running on port ${PORT}.`);
     }).on("error", (err: any) => {
         if (err.code === "EADDRINUSE") {
@@ -59,6 +59,8 @@ function start() {
     const QUERY_INTERVAL: number = process.env.QUERY_INTERVAL
         ? parseInt(process.env.QUERY_INTERVAL, 10)
         : 1;
+
+    queryAndSave();
     setInterval(async () => await queryAndSave(), QUERY_INTERVAL * 60 * 1000);
 }
 
