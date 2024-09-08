@@ -32,7 +32,7 @@ export const AVAIL_TOKEN = new Token(
     "0xEeB4d8400AEefafC1B2953e0094134A887C76Bd8",
     18,
     "AVAIL",
-    "AVAIL"
+    "avail"
 );
 
 export const WETH_TOKEN = new Token(
@@ -40,7 +40,7 @@ export const WETH_TOKEN = new Token(
     "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     18,
     "WETH",
-    "WETH"
+    "ethereum"
 );
 // Transactions
 

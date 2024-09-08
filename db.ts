@@ -1,37 +1,34 @@
-import { Sequelize, DataType, DataTypes } from "sequelize";
+import { Sequelize, DataTypes } from "sequelize";
 
 const sequelize = new Sequelize({
     dialect: "sqlite",
     storage: "./database.sqlite",
 });
 
-export const PositionInfoDB = sequelize.define(
-    'PositionInfo',
-    {
-        token0Name : {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        token1Name : {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        token0Amount: {
-            type: DataTypes.FLOAT
-        },
-        token1Amount: {
-            type: DataTypes.FLOAT
-        },
-        token0Value: {
-            type: DataTypes.FLOAT,
-            defaultValue: 0
-        },
-        token1Value: {
-            type: DataTypes.FLOAT,
-            defaultValue: 0
-        }
-    }
-)
+export const PositionInfoDB = sequelize.define("PositionInfo", {
+    token0Name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    token1Name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    token0Amount: {
+        type: DataTypes.FLOAT,
+    },
+    token1Amount: {
+        type: DataTypes.FLOAT,
+    },
+    token0Price: {
+        type: DataTypes.FLOAT,
+        defaultValue: 0,
+    },
+    token1Price: {
+        type: DataTypes.FLOAT,
+        defaultValue: 0,
+    },
+});
 
 export async function connectToDB() {
     try {
