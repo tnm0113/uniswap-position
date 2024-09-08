@@ -5,6 +5,10 @@ import { getPositionInfo, getTokenAmounts, getSqrtPriceX96 } from "./position";
 import express, { Application } from "express";
 import Server from "./server";
 
+const POSTION_ID = process.env.POSITION_ID
+    ? parseInt(process.env.POSITION_ID, 10)
+    : 10000;
+
 function startHttpSever() {
     const app: Application = express();
     const server: Server = new Server(app);
@@ -24,7 +28,7 @@ function startHttpSever() {
 }
 
 async function queryAndSave() {
-    let pos = await getPositionInfo(770381);
+    let pos = await getPositionInfo(POSTION_ID);
     let sqrtPriceX86 = await getSqrtPriceX96();
 
     let amounts = await getTokenAmounts(
