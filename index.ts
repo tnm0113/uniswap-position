@@ -59,7 +59,6 @@ function start() {
     const QUERY_INTERVAL: number = process.env.QUERY_INTERVAL
         ? parseInt(process.env.QUERY_INTERVAL, 10)
         : 1;
-
     queryAndSave();
     setInterval(async () => await queryAndSave(), QUERY_INTERVAL * 60 * 1000);
 }
